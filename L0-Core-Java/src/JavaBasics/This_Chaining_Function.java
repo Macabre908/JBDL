@@ -25,7 +25,7 @@ public class This_Chaining_Function {
         Point p2 = new Point(30,40);
         p1.print();
         p2.print();
-        p1.setX(50).setY(60);
+        p1.setX(50).setY(60).setX(30);
         p1.print();
     }
 
