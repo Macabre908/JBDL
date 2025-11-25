@@ -32,13 +32,8 @@ public class Question1 {
 
     public Map<Integer,Integer> getMap(List<Integer> numbers){
         Map<Integer,Integer> mp = new HashMap<>();
-        mp.put(numbers.get(0),1);
-        for(int i = 1;i<numbers.size();i++){
-            if(mp.containsKey(numbers.get(i))){
-                mp.put(numbers.get(i),mp.get(numbers.get(i))+1);
-            }else{
-                mp.put(numbers.get(i),1);
-            }
+        for(int x : numbers){
+            mp.put(x,mp.getOrDefault(x,0) + 1);
         }
         return mp;
     }
