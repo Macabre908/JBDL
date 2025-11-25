@@ -9,17 +9,29 @@ public class AutoboxingAndUnboxing {
         System.out.println(x2);
         System.out.println(x3);
         AutoboxingAndUnboxing test = new AutoboxingAndUnboxing();
-        test.check();
+        test.checkInCache();
+        test.checkNotInCache();
     }
 
-    public void check(){
+    public void checkInCache(){
         Integer x1 = 4;
         Integer x2 = 4;
+        if(x1==x2){
+            System.out.println("Same"); // Returns same as both values lie between -128 and 127 (Integer Wrapper Class Cache)
+        }
+        else {
+            System.out.println("Not Same");
+        }
+    }
+
+    public void checkNotInCache(){
+        Integer x1 = 200;
+        Integer x2 = 200;
         if(x1==x2){
             System.out.println("Same");
         }
         else {
-            System.out.println("Not Same");
+            System.out.println("Not Same"); // Returns not same as not between Integer Cache values
         }
     }
 }
