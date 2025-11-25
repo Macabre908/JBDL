@@ -11,25 +11,29 @@ public class BinarySearch {
             arr[i] = sc.nextInt();
         }
         int findNum = sc.nextInt();
-        if(binarySearch(arr,findNum)){
-            System.out.println(findNum + " is present in the array");
+        int res = binarySearch(arr,findNum);
+        if(res != -1){
+            System.out.println(findNum + " is present in the array at index " + res);
         }else{
             System.out.println(findNum + " is not present in the array");
         }
     }
 
-    public static boolean binarySearch(int[] arr,int num){
+    public static int binarySearch(int[] arr,int num){
         int low = 0;
         int high = arr.length-1;
         while(low<=high){
             int mid = (low+high)/2;
-            if(arr[mid]==num)
-                return true;
-            else if(arr[mid]>num)
+            if(arr[mid]==num){
+                return mid;
+            }
+            if(arr[mid]>num){
                 high = mid-1;
-            else
+            }
+            if(arr[mid]<num){
                 low = mid+1;
+            }
         }
-        return false;
+        return -1;
     }
 }
