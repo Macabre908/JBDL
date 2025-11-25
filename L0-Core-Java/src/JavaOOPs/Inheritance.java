@@ -45,6 +45,8 @@ public class Inheritance {
         mb.speedUp(20);
         mb.printInfo();
         mb.setSeatHeight(22);
+        mb.applyBrake(20);
+        mb.printInfo();
 
     }
 }
