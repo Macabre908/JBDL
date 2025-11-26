@@ -32,16 +32,14 @@ public class Question1 {
 
     public Map<Integer,Integer> getMap(List<Integer> numbers){
         Map<Integer,Integer> mp = new HashMap<>();
-        for(int x : numbers){
-            mp.put(x,mp.getOrDefault(x,0) + 1);
-        }
+        numbers.forEach(num -> mp.put(num, mp.getOrDefault(num, 0) + 1));
         return mp;
     }
 
     public long findSum(Map<Integer,Integer> mp){
         long sum = 0;
         for(int x : mp.keySet()){
-            sum = sum+ (x*mp.get(x));
+            sum = sum+ ((long) x *mp.get(x));
         }
         return sum;
     }
